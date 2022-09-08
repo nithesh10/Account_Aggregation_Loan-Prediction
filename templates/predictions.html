@@ -1,0 +1,52 @@
+{% extends 'partials/base.html' %}
+
+{%block title %} List Predictions {%endblock%}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-8">
+                
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Marital Status</th>
+                        <th scope="col">Dependance</th>
+                        <th scope="col">Education</th>
+                        <th scope="col">Self-Employed</th>
+                        <th scope="col">Applicant Income</th>
+                        <th scope="col">Co-Applicant Income</th>
+                        <th scope="col">Loan Amount</th>
+                        <th scope="col">Loan Term</th>
+                        <th scope="col">Credit History</th>
+                        <th scope="col">Property Area</th>
+                        <th scope="col">Loan Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for data in predicted_diabeties%}
+                      <tr>
+                        <th scope="row">{{data.client_name}}</th>
+                        <td>{{data.gender}}</td>
+                        <td>{{data.mstatus}}</td>
+                        <td>{{data.dependance}}</td>
+                        <td>{{data.education}}</td>
+                        <td>{{data.self_employed}}</td>
+                        <td>{{data.appIncome}}</td>
+                        <td>{{data.co_appIncome}}</td>
+                        <td>{{data.loan_amount}}</td>
+                        <td>{{data.loan_amount_term}}</td>
+                        <td>{{data.credit_history}}</td>
+                        <td>{{data.property_area}}</td>
+                        <td>{{data.loan_status}}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+
+            </div>
+        </div>
+    </div>
+{%endblock%}
